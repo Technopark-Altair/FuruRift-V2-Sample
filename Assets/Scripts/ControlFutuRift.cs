@@ -23,6 +23,8 @@ public class ControlFutuRift : MonoBehaviour
 
     void Update()
     {
-        
+        var euler = transform.eulerAngles;
+        futuRiftController.Pitch = euler.x > 180 ? euler.x - 360 : euler.x;
+        futuRiftController.Roll = euler.z > 180 ? euler.z - 360 : euler.z;
     }
 }
